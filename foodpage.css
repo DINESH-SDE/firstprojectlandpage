@@ -1,9 +1,18 @@
 /* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
-  padding-top: 76px;
+  padding-top: 80px;
   overflow-x: hidden;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  min-height: 100vh;
 }
 
 /* Keyframe Animations */
@@ -32,21 +41,6 @@ body {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
-}
-
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-100px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(100px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes zoomIn {
-  from { opacity: 0; transform: scale(0.5); }
-  to { opacity: 1; transform: scale(1); }
 }
 
 /* Animation Classes */
@@ -86,50 +80,57 @@ body {
 
 /* Navigation */
 .navbar {
+  background: rgba(12, 12, 12, 0.8) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
+  padding: 1rem 0;
 }
 
 .navbar-brand {
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  background: linear-gradient(45deg, #667eea, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   transition: all 0.3s ease;
 }
 
 .navbar-brand:hover {
-  transform: scale(1.1);
-  color: #667eea !important;
+  transform: scale(1.05);
+  filter: brightness(1.2);
 }
 
 .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem !important;
+  border-radius: 25px;
+  transition: all 0.3s ease;
   position: relative;
-  transition: all 0.3s ease;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: #667eea;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff !important;
+  background: rgba(102, 126, 234, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(102, 126, 234, 0.3);
 }
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   color: white;
-  padding: 100px 0;
+  padding: 120px 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .hero-section::before {
@@ -139,8 +140,30 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-  animation: float 6s ease-in-out infinite;
+  background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);
+  animation: float 8s ease-in-out infinite;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, #ffffff, #f093fb, #667eea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 2;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
 }
 
 /* Floating Icons */
@@ -155,66 +178,56 @@ body {
 
 .floating-icon {
   position: absolute;
-  font-size: 2rem;
-  color: rgba(255, 255, 255, 0.1);
-  animation: float 4s ease-in-out infinite;
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, rgba(102, 126, 234, 0.3), rgba(240, 147, 251, 0.3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.3));
 }
 
 .floating-icon:nth-child(1) {
-  top: 20%;
-  left: 10%;
+  top: 15%;
+  left: 8%;
   animation-delay: 0s;
 }
 
 .floating-icon:nth-child(2) {
-  top: 60%;
-  right: 15%;
-  animation-delay: 1s;
+  top: 65%;
+  right: 12%;
+  animation-delay: 1.5s;
 }
 
 .floating-icon:nth-child(3) {
-  bottom: 30%;
-  left: 20%;
-  animation-delay: 2s;
-}
-
-.floating-icon:nth-child(4) {
-  top: 40%;
-  right: 30%;
+  bottom: 25%;
+  left: 15%;
   animation-delay: 3s;
 }
 
-.hero-title {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  position: relative;
-  z-index: 2;
-}
-
-.hero-subtitle {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
-  position: relative;
-  z-index: 2;
+.floating-icon:nth-child(4) {
+  top: 35%;
+  right: 25%;
+  animation-delay: 4.5s;
 }
 
 /* Recipe Card */
 .recipe-card {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   margin-bottom: 2rem;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
 }
 
 .recipe-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.3);
 }
 
 .recipe-card::before {
@@ -224,8 +237,8 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.6s ease;
 }
 
 .recipe-card:hover::before {
@@ -244,37 +257,46 @@ body {
 }
 
 .recipe-content {
-  padding: 2rem;
+  padding: 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .recipe-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #ffffff, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
 .recipe-description {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
 }
 
 /* Preparation Time Card */
 .prep-time-card {
-  background: #f8f9fa;
-  border-radius: 15px;
-  padding: 1.5rem;
+  background: rgba(102, 126, 234, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
   margin-bottom: 2rem;
-  border-left: 4px solid #667eea;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
 }
 
 .prep-time-card:hover {
-  transform: translateX(10px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+  transform: translateY(-5px);
+  background: rgba(102, 126, 234, 0.15);
+  border-color: rgba(102, 126, 234, 0.4);
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
 }
 
 .prep-time-card::before {
@@ -282,19 +304,21 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(to bottom, #667eea, #764ba2);
-  transition: width 0.3s ease;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #f093fb);
+  transition: all 0.3s ease;
 }
 
 .prep-time-card:hover::before {
-  width: 8px;
+  height: 5px;
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
 }
 
 .prep-title {
-  color: #667eea;
-  font-weight: bold;
+  color: #f093fb;
+  font-weight: 600;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
@@ -314,29 +338,31 @@ body {
 }
 
 .section-heading {
-  color: #996633;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #996633;
-  padding-bottom: 0.5rem;
+  background: linear-gradient(45deg, #667eea, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
   position: relative;
   transition: all 0.3s ease;
 }
 
-.section-heading::before {
+.section-heading::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -8px;
   left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(45deg, #667eea, #f093fb);
+  border-radius: 2px;
   transition: width 0.5s ease;
 }
 
-.section-heading:hover::before {
-  width: 100%;
+.section-heading:hover::after {
+  width: 120px;
 }
 
 /* Lists */
@@ -345,17 +371,25 @@ body {
 }
 
 .ingredients-list li, .instructions-list li {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
   transition: all 0.3s ease;
   position: relative;
+  border-left: 2px solid transparent;
+  padding-left: 1rem;
 }
 
 .ingredients-list li:hover, .instructions-list li:hover {
   transform: translateX(10px);
-  color: #667eea;
+  color: #f093fb;
+  border-left-color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 8px;
 }
 
 .ingredients-list li::before {
-  content: '🥄';
+  content: '✨';
   position: absolute;
   left: -1.5rem;
   opacity: 0;
@@ -366,48 +400,47 @@ body {
   opacity: 1;
 }
 
-.ingredients-list li, .instructions-list li {
-  margin-bottom: 0.8rem;
-  font-size: 1.05rem;
-}
-
-.instructions-list li {
-  margin-bottom: 1.2rem;
-}
-
 .highlight {
-  color: #667eea;
-  font-weight: bold;
+  background: linear-gradient(45deg, #667eea, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
 }
 
 /* Nutrition Table */
 .nutrition-table {
-  background: #f8f9fa;
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin-top: 1rem;
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+  transition: all 0.4s ease;
 }
 
 .nutrition-table:hover {
-  background: #e9ecef;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(102, 126, 234, 0.3);
   transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .nutrition-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #e9ecef;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   position: relative;
 }
 
 .nutrition-row:hover {
-  background: rgba(102, 126, 234, 0.05);
-  padding-left: 1rem;
-  border-radius: 5px;
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+  padding-left: 1.5rem;
+  border-radius: 8px;
+  transform: translateX(5px);
 }
 
 .nutrition-row:last-child {
@@ -415,78 +448,26 @@ body {
 }
 
 .nutrition-value {
-  color: #996633;
-  font-weight: bold;
-  font-size: 1.1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-  
-  .recipe-content {
-    padding: 1.5rem;
-  }
-  
-  .recipe-title {
-    font-size: 2rem;
-  }
-  
-  .floating-icon {
-    font-size: 1.5rem;
-  }
-  
-  .recipe-card:hover {
-    transform: translateY(-5px);
-  }
-}
-
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Loading Animation */
-.loading {
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-/* Scroll Animations */
-.fade-in-up {
-  animation: fadeIn 0.8s ease-out;
-}
-
-/* Hover Effects */
-.hover-lift {
-  transition: transform 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-5px);
-}
-
-/* Glowing Effect */
-.glow {
-  box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
-  transition: box-shadow 0.3s ease;
-}
-
-.glow:hover {
-  box-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+  background: linear-gradient(45deg, #667eea, #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 /* Button Styles */
 .btn-primary {
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  background: linear-gradient(45deg, #667eea, #f093fb);
   border: none;
-  padding: 12px 30px;
+  padding: 15px 40px;
   font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 50px;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
 }
 
 .btn-primary::before {
@@ -496,24 +477,107 @@ html {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s;
+  background: linear-gradient(45deg, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s ease;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(45deg, #5a6fd8, #6a4190);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(45deg, #5a6fd8, #e084f0);
 }
 
 .btn-primary:hover::before {
   left: 100%;
 }
 
+.btn-outline-primary {
+  background: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+  padding: 12px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(45deg, #667eea, #f093fb);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(102, 126, 234, 0.3);
+}
+
 .pulse-btn {
-  animation: pulse 2s infinite;
+  animation: pulse 3s infinite;
 }
 
 .pulse-btn:hover {
   animation: none;
+}
+
+/* Form Styles */
+.form-control {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff;
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+  color: #ffffff;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+label {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  
+  .recipe-content {
+    padding: 2rem;
+  }
+  
+  .recipe-title {
+    font-size: 2.2rem;
+  }
+  
+  .floating-icon {
+    font-size: 1.5rem;
+  }
+  
+  .recipe-card:hover {
+    transform: translateY(-8px) scale(1.01);
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Footer */
+footer {
+  background: rgba(12, 12, 12, 0.9) !important;
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
