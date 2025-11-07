@@ -1,104 +1,149 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodHub - Delicious Recipes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/d0558421b6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="foodpage.css">
 </head>
 
 <body>
-    <div class="bg-color">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <div class="row">
+            <a class="navbar-brand" href="#"><i class="fas fa-utensils"></i> FoodHub</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#recipes">Recipes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-                <div class="col-12">
-                    <div class="cont-backgroung-color_1 text-center p-4">
-                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRxuXdTz0i7QMuj0mLuA2Lnt2hzw3OxNXZmbJor2xLLSvCNvpMV" class="cont-image w-100" style="border-radius: 20px;" />
-                        <div class="text-left ml-3 mt-3">
-                            <h1 class="mb-4 main-heading-size"> Simple Omelette Receipe </h1>
-                            <p> An easy and quick dish, perfect for any meal. This classic omelete combines beaten eggs
-                                cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.
-                            </p>
-                        </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="floating-icons">
+            <i class="fas fa-pizza-slice floating-icon"></i>
+            <i class="fas fa-hamburger floating-icon"></i>
+            <i class="fas fa-ice-cream floating-icon"></i>
+            <i class="fas fa-cookie-bite floating-icon"></i>
+        </div>
+        <div class="container text-center">
+            <h1 class="hero-title animate-fade-in">Discover Amazing Recipes</h1>
+            <p class="hero-subtitle animate-slide-up">From quick meals to gourmet dishes</p>
+            <a href="#recipes" class="btn btn-primary btn-lg animate-bounce">Explore Recipes</a>
+        </div>
+    </section>
 
-                        <div class="text-left mt-5 cont-backgroung-color_2">
-                            <h5 class="inside_container ml-3">Preparation time</h5>
-                            <ul class="ml-5 pb-3">
-                                <li class="mb-1"> <span class="list-item">Total</span>: Approximately 10 minutes</li>
-                                <li class="mb-1"> <span class="list-item">Preparation</span>: 5 minutes</li>
-                                <li class="mb-1"> <span class="list-item">Cooking</span>: 5 minutes</li>
-                            </ul>
-                        </div>
+    <!-- Featured Recipe Section -->
+    <section id="recipes" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 animate-on-scroll">Featured Recipe</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="recipe-card animate-on-scroll">
+                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRxuXdTz0i7QMuj0mLuA2Lnt2hzw3OxNXZmbJor2xLLSvCNvpMV" class="recipe-image" alt="Omelette" />
+                        
+                        <div class="recipe-content">
+                            <h1 class="recipe-title">Simple Omelette Recipe</h1>
+                            <p class="recipe-description">An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
+                            
+                            <div class="prep-time-card animate-on-scroll">
+                                <h5 class="prep-title">Preparation Time</h5>
+                                <ul class="prep-list">
+                                    <li class="animate-list-item"><span class="highlight">Total</span>: Approximately 10 minutes</li>
+                                    <li class="animate-list-item"><span class="highlight">Preparation</span>: 5 minutes</li>
+                                    <li class="animate-list-item"><span class="highlight">Cooking</span>: 5 minutes</li>
+                                </ul>
+                            </div>
 
+                            <div class="recipe-section animate-on-scroll">
+                                <h3 class="section-heading">Ingredients</h3>
+                                <ul class="ingredients-list">
+                                    <li class="animate-list-item">2-3 large eggs</li>
+                                    <li class="animate-list-item">Salt, to taste</li>
+                                    <li class="animate-list-item">Pepper, to taste</li>
+                                    <li class="animate-list-item">1 tablespoon of butter or oil</li>
+                                    <li class="animate-list-item">Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+                                </ul>
+                            </div>
 
+                            <div class="recipe-section">
+                                <h3 class="section-heading">Instructions</h3>
+                                <ol class="instructions-list">
+                                    <li><span class="highlight">Beat the eggs</span>: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.</li>
+                                    <li><span class="highlight">Heat the pan</span>: Place a non-stick frying pan over medium heat and add butter or oil.</li>
+                                    <li><span class="highlight">Cook the omelette</span>: Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.</li>
+                                    <li><span class="highlight">Add fillings (optional)</span>: When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.</li>
+                                    <li><span class="highlight">Fold and serve</span>: As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.</li>
+                                    <li><span class="highlight">Enjoy</span>: Serve hot, with additional salt and pepper if needed.</li>
+                                </ol>
+                            </div>
 
-                        <div class="text-left">
-                            <h1 class="ingredients-heading pb-2 pt-2">Ingredients</h1>
-                            <ul>
-                                <li class="pb-2"> 2-3 large eggs </li>
-                                <li class="pb-2"> Salt, to taste </li>
-                                <li class="pb-2"> Pepper, to taste </li>
-                                <li class="pb-2"> 1 tablespoon of butter or oil </li>
-                                <li class="pb-2"> Optional fillings: cheese, diced vegetables, cooked meats, herbs </li>
-                            </ul>
-                        </div>
-
-                        <hr>
-
-                        <div class="text-left">
-                            <h1 class="instructions-heading"> Instructions </h1>
-
-                            <ol>
-                                <li class="mb-2"> <span class="ml-3"> <span class="list-item"> Beat the eggs </span>: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture. </span> </li>
-                                <li class="mb-2"> <span class="ml-3"> <span class="list-item"> Heat the pan: </span>Place a non-stick frying pan over medium head and add butter or oil. </span></li>
-                                <li class="mb-2"> <span class="ml-3"> <span class="list-item"> Cook the omelette: </span> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface. </span></li>
-                                <li class="mb-2"> <span class="ml-3"> <span class="list-item"> Add fillings (optional): </span> When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette. </span></li>
-                                <li class="mb-2"> <span class="ml-3"> <span class="list-item"> Fold and serve: </span> As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate. </span></li>
-                                <li class="mb-2"> <span class="ml-3"> <span class="list-item"> Enjoy: </span> Serve hot, with additional salt and pepper if needed. </span></li>
-                            </ol>
-                        </div>
-
-                        <hr>
-
-                        <div class="text-left">
-                            <h1 class="nutrition-heading"> Nutrition </h1>
-                            <p> The table below shows nutritional values per serving without the additional fillings. </p>
-
-                            <div class="d-flex flex-row justify-content-center">
-                                <div class="col-6">
-                                    <div>
-                                        <p>Calories</p>
-                                        <p>Carbs</p>
-                                        <p>Protein</p>
-                                        <p>Fat</p>
+                            <div class="recipe-section">
+                                <h3 class="section-heading">Nutrition</h3>
+                                <p>Nutritional values per serving without additional fillings:</p>
+                                <div class="nutrition-table">
+                                    <div class="nutrition-row">
+                                        <span>Calories</span>
+                                        <span class="nutrition-value">277kcal</span>
+                                    </div>
+                                    <div class="nutrition-row">
+                                        <span>Carbs</span>
+                                        <span class="nutrition-value">0g</span>
+                                    </div>
+                                    <div class="nutrition-row">
+                                        <span>Protein</span>
+                                        <span class="nutrition-value">20g</span>
+                                    </div>
+                                    <div class="nutrition-row">
+                                        <span>Fat</span>
+                                        <span class="nutrition-value">22g</span>
                                     </div>
                                 </div>
-
-                                <div class="col-6">
-                                    <div style="color: #996633; font-weight:bold;">
-                                        <p>277kcal</p>
-                                        <p>0g</p>
-                                        <p>20g</p>
-                                        <p>22g</p>
-                                    </div>
-
-                                </div>
-                                <div>
-                                    <h1>End of the page</h1>
-                                </div>
-
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4 animate-on-scroll">About FoodHub</h2>
+            <p class="lead animate-on-scroll">We're passionate about sharing delicious, easy-to-make recipes that bring people together around the table.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-4 animate-on-scroll">Get In Touch</h2>
+            <p class="animate-on-scroll">Have a recipe to share? We'd love to hear from you!</p>
+            <a href="mailto:hello@foodhub.com" class="btn btn-outline-primary animate-on-scroll pulse-btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; 2024 FoodHub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="foodpage.js"></script>
 </body>
 
 </html>
